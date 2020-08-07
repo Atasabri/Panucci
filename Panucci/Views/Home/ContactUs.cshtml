@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewData["Title"] = "تواصل بنا";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section HeaderContainer{
+    <div class="wthree-heading">
+        <h2> كن على تواصل بنا </h2>
+    </div>
+
+}
+
+
+<!-- contact -->
+<div class="contact">
+    <div class="panu-about panu-team">
+        <div class="container">
+            <!-- map -->
+            <div class="map">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3452.7969626899753!2d31.51238151511581!3d30.0713538818726!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDA0JzE2LjkiTiAzMcKwMzAnNTIuNSJF!5e0!3m2!1sen!2seg!4v1581854981994!5m2!1sen!2seg" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+            </div>
+            <!-- //map -->
+            <div class="agile-contact-grids">
+                <div class="col-md-5 address">
+                    <div class="address-row">
+                        <div class="col-md-2 pa-agile-address-left">
+                            <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                        </div>
+                        <div class="col-md-10 pa-agile-address-right">
+                            <h5> العنوان </h5>
+                            <p>123 Fourth Avenue, Seattle Wa 98104, Los Angeles </p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="address-row">
+                        <div class="col-md-2 pa-agile-address-left">
+                            <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
+                        </div>
+                        <div class="col-md-10 pa-agile-address-right">
+                            <h5> البريد الالكتروني </h5>
+                            <p><a href="mailto:Hossamnayl85@gmail.com"> Hossamnayl85@gmail.com</a></p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                    <div class="address-row">
+                        <div class="col-md-2 pa-agile-address-left">
+                            <span class="glyphicon glyphicon-phone" aria-hidden="true"></span>
+                        </div>
+                        <div class="col-md-10 pa-agile-address-right">
+                            <h5> الرقم الموحد </h5>
+                            <p>
+                                الإمارات :
+                                <br />
+                                <a href="tel:00971562228496">00971562228496</a>
+                                <br />
+                                <a href="tel:00971552249544">00971552249544</a>
+
+                                <br />
+                                مصر
+                                <br />
+                                <a href="tel:01033360511">01033360511</a>
+                                <br />
+                                <a href="tel:026928833">02-6928833</a>
+                            </p>
+                        </div>
+                        <div class="clearfix"> </div>
+                    </div>
+                </div>
+
+                <div class="col-md-7 contact-form">
+                    @if (ViewBag.Done == null)
+                    {
+                        <form class="form-groub" asp-action="ContactUs" method="post">
+                            <input class="input-control" type="text" name="First_Name" placeholder="الاسم الاول" required="">
+                            <input class="email" name="Last_Name" type="text" placeholder="الاسم الاخير" required="">
+                            <input type="text" name="Phone" placeholder="رقم الهاتف" required="">
+                            <input class="email" name="Email" type="email" placeholder="البريد الالكتروني" required="">
+                            <textarea name="Message" placeholder="الرسالة" required=""></textarea>
+                            <input type="submit" value="ارســـال">
+                        </form>
+                    }
+                    else
+                    {
+                        <h3>شكرا لتواصلك معنا . سيتم الرد قريبا</h3>
+                    }
+
+                </div>
+
+                <div class="clearfix"> </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //contact -->

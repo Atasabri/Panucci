@@ -1,0 +1,57 @@
+﻿@model IEnumerable<Panucci.Models.Subscriper>
+
+@{
+    ViewData["Title"] = "Subscripers";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <h2>Subscripers</h2>
+
+
+<form asp-action="SendMail" method="post" enctype="multipart/form-data">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>
+                    <input id="checkall" type="checkbox" />
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Email)
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <input type="checkbox" name="Emails" value="@item.Email" />
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Email)
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+    <h3>The Mail Subject  : </h3> <input type="text" name="Subject" class="form-control" /><br />
+    <h3>The Mail Html File  : </h3> <input type="file" name="File" required /><br />
+    <br />
+    <input type="submit" value="Send Mail To Selected Subscripers" class="btn btn-primary" />
+</form>
+
+<script>
+        var checkall = document.getElementById("checkall");
+        var myform = document.getElementsByName("Emails");
+        checkall.onclick = function () {
+            if (checkall.checked == true) {
+                for (var i = 0; i < document.getElementsByName("Emails").length; i++) {
+                    myform[i].checked = true;
+                }
+            } else {
+                for (var i = 0; i < document.getElementsByName("Emails").length; i++) {
+                    myform[i].checked = false;
+                }
+            }
+        }
+</script>

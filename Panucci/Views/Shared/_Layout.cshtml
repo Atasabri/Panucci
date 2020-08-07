@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <link rel="icon" href="~/images/logo.png">
+    <link href="~/lib/twitter-bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/lib/twitter-bootstrap/css/bootstrap-grid.css" rel="stylesheet" />
+
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/jquery-validate/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/images/logo.png" width="50" height="50" alt="Alternate Text" /></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a class="btn btn-dark my-2 my-sm-0" asp-controller="Auth" asp-action="LogOut"><i class="fa-sign"></i> Log Out</a>
+                        <span class="nav-link text-dark">@User.Identity.Name</span>
+                        <ul class="navbar-nav flex-grow-1">
+                            @if (User.IsInRole("Manager"))
+                            {
+                                <li class="nav-item">
+                                    <a class="nav-link text-dark" asp-controller="Admins" asp-action="Index">Admins</a>
+                                </li>
+                            }
+
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Meals" asp-action="Index">Meals</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Drinks" asp-action="Index">Drinks</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Images" asp-action="Index">Images</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Contacts" asp-action="Index">Contacts</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-controller="Subscripers" asp-action="Index">Subscripers</a>
+                            </li>
+
+                        </ul>
+                    }
+
+
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <hr />
+    <footer>
+        <div class="container">
+            &copy; @DateTime.Now.Year - Panucci
+        </div>
+    </footer>
+
+    @RenderSection("Scripts", required: false)
+
+    <script>
+
+        $("#Photo").change(function () {
+            var fileExtension = ['jpeg', 'jpg', 'png'];
+            if ($.inArray($(this).val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+                $("#Photo").siblings(".text-danger").html("Please Insert Image {jpeg,jpg,png}");
+            } else {
+                $("#Photo").siblings(".text-danger").html("");
+            }
+        });
+        $("#form").submit(function (e) {
+            var fileExtension = ['jpeg', 'jpg', 'png'];
+            if ($.inArray($("#Photo").val().split('.').pop().toLowerCase(), fileExtension) == -1) {
+                $("#Photo").siblings(".text-danger").html("Please Insert Image {jpeg,jpg,png}");
+                e.preventDefault();
+            } else {
+                $("#Photo").siblings(".text-danger").html("");
+            }
+        });
+
+    </script>
+</body>
+</html>

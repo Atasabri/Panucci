@@ -1,0 +1,381 @@
+﻿
+@{
+    ViewData["Title"] = "بانوتشي";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section HeaderContainer{
+
+    <div class="panucci-banner-slider">
+        <div class="container">
+            <div class="slider">
+                <div class="callbacks_container">
+                    <ul class="rslides callbacks callbacks1" id="slider4">
+                        <li>
+                            <div class="top-agileits-banner">
+                                <div class="agileits-banner-info">
+                                    <h3>أفضل المأكولات</h3>
+                                    <div class="pa-button">
+                                        <div class="panus-button">
+                                            <a asp-action="About">تعرف على المزيد</a>
+                                        </div>
+                                    </div>
+                                    <div class="bounce animated">
+                                        <a href="#welcome" class="scroll">
+                                            <div class="mouse"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="agileinfo-social-grids">
+                                    <a href="https://www.facebook.com/Panucci-102252828016484/" target="_blank"><i class="fab fa-facebook"></i></a>
+                                    <a href="https://www.instagram.com/panucci.resturant.cafe/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="top-agileits-banner">
+                                <div class="agileits-banner-info">
+                                    <h3>أفضل المشروبات</h3>
+                                    <div class="pa-button">
+                                        <div class="panus-button">
+                                            <a asp-action="About">تعرف على المزيد</a>
+                                        </div>
+                                    </div>
+                                    <div class="bounce animated">
+                                        <a href="#welcome" class="scroll">
+                                            <div class="mouse"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="agileinfo-social-grids">
+                                    <a href="https://www.facebook.com/Panucci-102252828016484/" target="_blank"><i class="fab fa-facebook"></i></a>
+                                    <a href="https://www.instagram.com/panucci.resturant.cafe/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="top-agileits-banner">
+                                <div class="agileits-banner-info">
+                                    <h3>قائمة أسعار في متناول الجميع</h3>
+                                    <div class="pa-button">
+                                        <div class="panus-button">
+                                            <a asp-action="About">تعرف على المزيد</a>
+                                        </div>
+                                    </div>
+                                    <div class="bounce animated">
+                                        <a href="#welcome" class="scroll">
+                                            <div class="mouse"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="agileinfo-social-grids">
+                                    <a href="https://www.facebook.com/Panucci-102252828016484/" target="_blank"><i class="fab fa-facebook"></i></a>
+                                    <a href="https://www.instagram.com/panucci.resturant.cafe/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="top-agileits-banner">
+                                <div class="agileits-banner-info">
+                                    <h3>جودة ورقي في الخدمة</h3>
+                                    <div class="pa-button">
+                                        <div class="panus-button">
+                                            <a asp-action="About">تعرف على المزيد</a>
+                                        </div>
+                                    </div>
+                                    <div class="bounce animated">
+                                        <a href="#welcome" class="scroll">
+                                            <div class="mouse"></div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="agileinfo-social-grids">
+                                    <a href="https://www.facebook.com/Panucci-102252828016484/" target="_blank"><i class="fab fa-facebook"></i></a>
+                                    <a href="https://www.instagram.com/panucci.resturant.cafe/" target="_blank"><i class="fab fa-instagram"></i></a>
+                                </div>
+                                <div class="clearfix"> </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="clearfix"> </div>
+                <script>
+                        // You can also use "$(window).load(function() {"
+                        $(function () {
+                            // Slideshow 4
+                            $("#slider4").responsiveSlides({
+                                auto: true,
+                                pager: true,
+                                nav: false,
+                                speed: 500,
+                                namespace: "callbacks",
+                                before: function () {
+                                    $('.events').append("<li>before event fired.</li>");
+                                },
+                                after: function () {
+                                    $('.events').append("<li>after event fired.</li>");
+                                }
+                            });
+
+                        });
+                </script>
+                <!--banner Slider starts Here-->
+            </div>
+        </div>
+    </div>
+
+}
+
+<!-- welcome -->
+<div class="welcome" id="welcome">
+    <div class="col-md-5 ab-pa-agile-img">
+
+    </div>
+    <div class="col-md-7 ab-pa-agile-info">
+        <div class="ab-pa-agile-info-text">
+            <h2 class="title-pa">مرحبا بكم</h2>
+            <p class="sub-text one">يمكنك اختيار ذوقك في الطعام</p>
+            <p>
+                يعد مطعم بانوتشي من اول المطاعم والكافيهات داخل مصر التي لها شكل ومذاق مختلف .
+                فهو اول مطعم يصمم بشكل ديكوري يناسب الاسر والافراد لقضاء وقت مميز به .. فهو منذ ان نشات الفكرة
+                حرصنا علي ان نقدم للعميل تجربة تغنية عن اللجو للتنزة خارج القاهرة لان في مطعم ابانوتشي سيجد كل احتياجته
+                من فخامة في الاستقبال الي هدوء ،راحة في قضاء الوقت الي طعم ومذاق جيد جدا لنجعل من زيارته تجربة مريحة
+                وسعيدة له ولاسرتة .
+                ان غاية هدفنا في مطعم بانوتشي هو رضاء عملانا بان تجد كل ما تتمناه وتقضي وقت سعيد
+            </p>
+
+        </div>
+        <div class="ab-pa-agile-inner">
+            <div class="col-md-6 ab-pa-agile-part">
+                <h4>المأكولات</h4>
+                <p>
+                     يوجد جميع المأكولات المصرية وغيرها من الوجبات السريعة وذات المزاق الممتاز . بيتزا , برجر , مشويات وغيرها من الوجبات الرئيسية
+                    . ويراعي جيدا وبحرص شديد نظافة الطعام ونظافة الطباخين ونظافى الاطباق والمعالق وغيرها حرصا منا علي صحة العملاء وحرصا ايضا علي الزوق العام وجودة ما نقدم 
+                </p>
+            </div>
+            <div class="col-md-6 ab-pa-agile-part two">
+                <h4>المشروبات</h4>
+                <p>
+                   يمتلك مطعمنا قائمة كبيرة من المشروبات سواء كانت ساخنة او باردة  . ويمتلك مقدمين الطلبات العاملين علي تلبية 
+                    طلبات العملاء الرقي في التعامل وسرعة الاستجابة حيث لحتاج مطعم بانوتشي الي ان يجد العميل كل ما بتمناه 
+                    وان يقضي وقتا لطيفا من خال الاستمتاع بالخصوصية والمداق الجيد
+                </p>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+    <div class="clearfix"></div>
+</div>
+<!-- //welcome -->
+<!-- services -->
+<div class="services" id="services">
+    <div class="container">
+        <div class="pa-agile-heading">
+            <h3> قائمة المأكولات </h3>
+        </div>
+        <div class="panus-services-grids">
+            <div class="col-md-3 panus-services-left">
+                <div class="panus-services-left-top">
+                    <i class="fas fa-pizza-slice" aria-hidden="true"></i>
+                    <h5> البيتزا </h5>
+                    <p>جميع أنواع البيتزا بطرق احترافية</p>
+                </div>
+                <div class="panus-services-left-top panus-services-left-top1">
+                    <i class="fas fa-seedling" aria-hidden="true"></i>
+                    <h5> السلطات والخضراوات </h5>
+                    <p>السلطات والخضراوات الفريش بجميع الطرق والاضافات</p>
+                </div>
+            </div>
+            <div class="col-md-6 panus-services-middle">
+                <div class="panus-services-middle-img">
+                    <img src="images/4.jpg" alt="" />
+                </div>
+                <div class="panus-services-middle-grids">
+                    <div class="col-md-6 panus-services-middle-left">
+                        <div class="panus-services-left-top">
+                            <i class="fas fa-hamburger" aria-hidden="true"></i>
+                            <h5> البرجر </h5>
+                            <p>يختلف برجر مطعم بانوتشي كثيرا عن غيره في المذاق</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 panus-services-middle-left">
+                        <div class="panus-services-left-top">
+                            <i class="fas fa-hotdog" aria-hidden="true"></i>
+                            <h5> السندوتشات</h5>
+                            <p>جميع انواع السندوتشات المشهورة بمذاق رائع</p>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="col-md-3 panus-services-left">
+                <div class="panus-services-left-top">
+                    <i class="fas fa-stroopwafel" aria-hidden="true"></i>
+                    <h5> المحمصات </h5>
+                    <p>يحتوي مطعم بانوتشي ايضا علي المحمصات </p>
+                </div>
+                <div class="panus-services-left-top panus-services-left-top1">
+                    <i class="fas fa-fill" aria-hidden="true"></i>
+                    <h5> أخري </h5>
+                    <p>يمتلك بانوتشي الكثير من الوجبات والاطعمة</p>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+            <div class="pa-button">
+                <div class="panus-button1">
+                    <a asp-action="Meals"> شاهد كل المأكولات </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<div class="services" id="services">
+    <div class="container">
+        <div class="pa-agile-heading">
+            <h3> قائمة المشروبات </h3>
+        </div>
+        <div class="panus-services-grids">
+            <div class="col-md-3 panus-services-left">
+                <div class="panus-services-left-top">
+                    <i class="fas fa-mug-hot" aria-hidden="true"></i>
+                    <h5> ساخنة </h5>
+                    <p>جميع المشروبات الساخنة علي طريقة بانوتشي</p>
+                </div>
+                <div class="panus-services-left-top panus-services-left-top1">
+                    <i class="fas fa-cocktail" aria-hidden="true"></i>
+                    <h5> باردة </h5>
+                    <p>المشروبات الباردة الفريش لانتعاش</p>
+                </div>
+            </div>
+            <div class="col-md-6 panus-services-middle">
+                <div class="panus-services-middle-img">
+                    <img src="images/g10.jpg" alt="" />
+                </div>
+                <div class="panus-services-middle-grids">
+                    <div class="col-md-6 panus-services-middle-left">
+                        <div class="panus-services-left-top">
+                            <i class="fas fa-glass-cheers" aria-hidden="true"></i>
+                            <h5> كلاسيكية </h5>
+                            <p>المشروبات الكلاسيكية لاصحاب الذوق الرفيع </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 panus-services-middle-left">
+                        <div class="panus-services-left-top">
+                            <i class="fas fa-apple-alt" aria-hidden="true"></i>
+                            <h5> فريش </h5>
+                            <p>جميع المشروبات تكون فريش</p>
+                        </div>
+                    </div>
+                    <div class="clearfix"> </div>
+                </div>
+            </div>
+            <div class="col-md-3 panus-services-left">
+                <div class="panus-services-left-top">
+                    <i class="fas fa-wine-bottle" aria-hidden="true"></i>
+                    <h5> معلبات </h5>
+                    <p>يحتوي مطعم بانوتشي ايضا علي المعلبات</p>
+                </div>
+                <div class="panus-services-left-top panus-services-left-top1">
+                    <i class="fas fa-fill-drip" aria-hidden="true"></i>
+                    <h5> اخرى </h5>
+                    <p>يوجد الكثير من المشروبات في بانوتشي . عليك تجربتها</p>
+                </div>
+            </div>
+            <div class="clearfix"> </div>
+            <div class="pa-button">
+                <div class="panus-button1">
+                    <a asp-action="Drinks">شاهد كل المشروبات </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- //services -->
+<!-- news -->
+<div class="news jarallax">
+    <div class="container">
+        <div class="pa-agile-heading news-heading">
+            <h3> يمكنك قضاء المناسبات في بانوتشي </h3>
+        </div>
+        <div class="news-grids">
+            <div class=" col-md-4 section-grid-wthree one">
+                <div class="services-info-pa-agileits">
+                    <h5 class="sub-title"><a href="single.html"> حفلة رأس السنة </a></h5>
+                    <h6>Jan 01,@DateTime.Now.Year </h6>
+                    <p class="para-pa">رأس السنة في بانوتشي ليس لها مثيل . قم بزيارتنا في رأس السنة وشاهد كيف يحتفل بانوتشي بهذا اليوم</p>
+                </div>
+                <div class="services-img-agileits-panucci">
+                    <a href="single.html"><img src="images/5.jpg" alt="service-img"></a>
+                </div>
+            </div>
+            <div class=" col-md-4 section-grid-wthree">
+                <div class="services-img-agileits-panucci">
+                    <a href="single.html"><img src="images/6.jpg" alt="service-img"></a>
+                </div>
+                <div class="services-info-pa-agileits mid">
+                    <h5 class="sub-title"><a href="single.html"> العطلات الرسمية</a></h5>
+                    <h6>Week End</h6>
+                    <p class="para-pa">يعرف بانوتشي جيدا اهمية العطلات الرسمية بالنسبة للعملاء لذلك يهتم بانوتشي براحة العملاء وتعويض ضغط العمل</p>
+                </div>
+            </div>
+            <div class=" col-md-4 section-grid-wthree">
+                <div class="services-info-pa-agileits">
+                    <h5 class="sub-title"><a href="single.html"> الشهر الكريم </a></h5>
+                    <h6>Ramadan Kareem</h6>
+                    <p class="para-pa">يعرف بانوتشي جيدا اهمية الشهر الكريم بالنسبة للمصريين والمسلمين لذلك يقدم بانوتشي جميع وجباته في رمضان وباجواء رمضانية اصيلة</p>
+                </div>
+                <div class="services-img-agileits-panucci">
+                    <a href="single.html"><img src="images/7.jpg" alt="service-img"></a>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </div>
+</div>
+<!-- //news -->
+<!-- subscribe -->
+<div class="subscribe">
+    <div class="container">
+        <div class="pa-agile-heading agile-subscribe-heading">
+            <h3> تابعنا </h3>
+            <p> قم بادخال بريدك الالكتروني لتحصل على كل ما هو جديد </p>
+        </div>
+        <div class="subscribe-grid">
+            <input type="text" placeholder="Subscribe" id="subscribetxt" name="Email" required="">
+            <button onclick="Subscribe();" class="btn1"><i class="fab fa-telegram-plane" aria-hidden="true"></i></button>
+            <br />
+            <span id="error" class="text-danger"></span>
+        </div>
+    </div>
+</div>
+<!-- //subscribe -->
+
+
+<script>
+    function Subscribe() {
+        if ($("#subscribetxt").val().trim() != '' && $("#subscribetxt").val().includes("@@")) {
+            $.post("@Url.Action("Subscribe", "Home")", {
+
+                Email: $("#subscribetxt").val()
+
+            },
+                function (data) {
+                    if (data == true) {
+                        $(".subscribe-grid").html("<h3>شكرا علي تواصلك معنا . سيتم ابلاغك بكل جديد</h3>")
+                    }
+                })
+        } else {
+            $("#error").html("قم بادخال البريد الالكتروني")
+        }
+           };
+</script>
+
+
+

@@ -1,0 +1,35 @@
+﻿@model IEnumerable<Drink>
+@{
+    ViewData["Title"] = "المشروبات";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section HeaderContainer{
+    <div class="wthree-heading">
+        <h2> المشروبات </h2>
+    </div>
+
+}
+
+<!-- cards -->
+<div class="codes icons main-grid-border">
+    <div class="container">
+        <h3 class="text-center"> قائمة من افضل المشروبات </h3>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-6 col-md-4">
+                    <div class="thumbnail">
+                        <img src="~/Uploads/Drinks/@(item.ID).jpg" alt="@item.Price LE">
+                        <div class="caption">
+                            <h3>@item.Name</h3>
+                            <p>@item.Price LE</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- //icons -->

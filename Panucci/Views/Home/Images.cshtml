@@ -1,0 +1,79 @@
+﻿@model IEnumerable<Image>
+@{
+    ViewData["Title"] = "معرض الصور";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+@section HeaderContainer{
+    <div class="wthree-heading">
+        <h2>معرض الصور</h2>
+    </div>
+
+}
+
+
+<!-- gallery -->
+<div class="gallery-top" dir="ltr">
+    <div class="container">
+        <div class="gallery">
+
+            @foreach (var item in Model)
+            {
+                <div class="gallery-small gallery-middle">
+                    <div class="agileits-gallery gallery-small-text effect-3">
+                        <a href="~/Uploads/Images/@(item.ID).jpg"><img src="~/Uploads/Images/@(item.ID).jpg" alt="" title="@item.Description" /></a>
+                    </div>
+                </div>
+            }
+
+        </div>
+        <script type="text/javascript" src="~/js/simple-lightbox.js"></script>
+        <script>
+				$(function() {
+					var $gallery = $('.gallery a').simpleLightbox();
+
+					$gallery.on('show.simplelightbox', function() {
+							//console.log('Requested for showing');
+						})
+						.on('shown.simplelightbox', function() {
+							//console.log('Shown');
+						})
+						.on('close.simplelightbox', function() {
+							//console.log('Requested for closing');
+						})
+						.on('closed.simplelightbox', function() {
+							//console.log('Closed');
+						})
+						.on('change.simplelightbox', function() {
+							//console.log('Requested for change');
+						})
+						.on('next.simplelightbox', function() {
+							//console.log('Requested for next');
+						})
+						.on('prev.simplelightbox', function() {
+							//console.log('Requested for prev');
+						})
+						.on('nextImageLoaded.simplelightbox', function() {
+							//console.log('Next image loaded');
+						})
+						.on('prevImageLoaded.simplelightbox', function() {
+							//console.log('Prev image loaded');
+						})
+						.on('changed.simplelightbox', function() {
+							//console.log('Image changed');
+						})
+						.on('nextDone.simplelightbox', function() {
+							//console.log('Image changed to next');
+						})
+						.on('prevDone.simplelightbox', function() {
+							//console.log('Image changed to prev');
+						})
+						.on('error.simplelightbox', function(e) {
+							//console.log('No image found, go to the next/prev');
+							//console.log(e);
+						});
+				});
+        </script>
+    </div>
+</div>
+<!-- //gallery -->

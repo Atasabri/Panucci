@@ -1,0 +1,66 @@
+﻿@model IEnumerable<IdentityUser>
+@inject UserManager<IdentityUser> usermanager
+@{
+    ViewData["Title"] = "Admins";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Admins</h2>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table" id="table">
+    <thead>
+        <tr>
+            <th>
+                User Name
+            </th>
+            <th>
+                Role
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr id="@item.Id">
+                <td>
+                    @Html.DisplayFor(modelItem => item.UserName)
+                </td>
+                <td>
+                    @{ string role = (await usermanager.GetRolesAsync(item)).FirstOrDefault();}
+                    @role
+                </td>
+                <td>
+                    <button onclick="Delete('@(item.Id)');" class="btn btn-danger">Delete</button>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<script>
+    function Delete(i) {
+        var confirmed = confirm("Are You Sure You Want To Delete This User ?");
+
+        if (confirmed) {
+                $.post("@Url.Action("Delete", "Admins")", {
+
+                    ID: i
+
+            },
+                    function (data) {
+                        if (data == 0) {
+                            alert("Can't Delete This User !!")
+                        }
+            $("#table tr#" + data + "").remove();
+        }
+
+          )
+        }
+        }
+
+</script>
